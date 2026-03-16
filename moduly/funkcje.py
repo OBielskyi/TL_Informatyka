@@ -1,3 +1,14 @@
+# Program "Funkcje"
+# !! W tej wersji programu nie ma menu, bo ten program jest wykorzystywany jako moduł przez ./program.py. !!
+'''
+Program wczytuje 10 liczb (int) i realizuje działania za pomocą funkcji:
+suma (suma), średnia arytmetyczna (srar),
+największa (maks) i najmniesza (mini) liczba,
+różnica pomiędzy maks a mini (rozn),
+liczby parzyste (parz) i nieparzyste (niep).
+'''
+
+# Wczytujemy liczby
 int1 = int (input ("Wprowadź liczbę 1 (int): "))
 int2 = int (input ("Wprowadź liczbę 2: "))
 int3 = int (input ("Wprowadź liczbę 3: "))
@@ -8,8 +19,11 @@ int7 = int (input ("Wprowadź liczbę 7: "))
 int8 = int (input ("Wprowadź liczbę 8: "))
 int9 = int (input ("Wprowadź liczbę 9: "))
 int10 = int (input ("Wprowadź liczbę 10: "))
+
+# Definiujemy funkcje
 def suma (): return int1+int2+int3+int4+int5+int6+int7+int8+int9+int10
 def srar (): return (suma () // 10)
+# Funkcja maks () ma chujowy (nieczytelny) kod, jeśli wiesz jak naprawić, to proszę to zrobić.
 def maks ():
     if not ((int2 > int1) or (int3 > int1) or (int4 > int1) or (int5 > int1) or (int6 > int1) or (int7 > int1) or (int8 > int1) or (int9 > int1) or (int10 > int1)):
         return int1
@@ -31,6 +45,7 @@ def maks ():
         return int9
     else:
         return int10
+# Ten sam problem z funkcją mini (), jest prawie nieczytelna (działa jak odwrócona maks ()).
 def mini ():
     if not ((int2 < int1) or (int3 < int1) or (int4 < int1) or (int5 < int1) or (int6 < int1) or (int7 < int1) or (int8 < int1) or (int9 < int1) or (int10 < int1)):
         return int1
@@ -54,6 +69,7 @@ def mini ():
         return int10
 def rozn ():
     return maks()-mini()
+# Kod funkcji parz () jest w miarę czytelny, ale wydaje mi się, że można go trochę skrócić.
 def parz ():
     licznik = 0
     if (int1 % 2) == 0:
