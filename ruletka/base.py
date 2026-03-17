@@ -1,7 +1,6 @@
 # Program "Ruletka" (krótka wersja)
-# Nie chciało mi się szczegółowo komentować kodu, zróbcie to sami.
 
-from random import randint
+from random import randint    # Program ten potrzebuje randint z modułu random dla generacji losowych liczb
 
 # Losowanie liczby
 i = randint (0, 36)
@@ -12,7 +11,7 @@ if i % 2 == 0:
 elif i != 0:
     print ("Liczba nie jest parzysta.")
     
-tuzin = 0
+tuzin = 0    # Jeśli tuzin pozostanie 0, to i jest 0, czyli nie należy do żadnego tuzina
 match i:
     case i if i >= 1 and i <= 12:
         tuzin = 1
@@ -28,7 +27,7 @@ match tuzin:
     case 3:
         print ("Liczba należy do 3 tuzina.")
 
-polowa = 0
+polowa = 0    # Analogicznie do zmiennej tuzin
 if i >= 1 and i <=18:
     polowa = 1
 elif i >= 18 and i <= 36:
@@ -51,6 +50,7 @@ if kolumna != 0:
     print ("Liczba należy do", kolumna, "kolumny.")
 
 czerwona = False
+# Kod poniżej sprawdza, czy liczba jest czerwoną (według tabelki). Ten warunek jest długi w chuj, ale chyba nie da się tego zrobić inaczej.
 if i == 1 or i == 3 or i == 5 or i == 7 or i == 9 or i == 12 or i == 14 or i == 16 or i == 18 or i == 19 or i == 21 or i == 23 or i == 25 or i == 27 or i == 30 or i == 32 or i == 34 or i == 36:
     czerwona = True
 if czerwona and i != 0:
