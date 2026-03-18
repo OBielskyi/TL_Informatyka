@@ -53,7 +53,6 @@ while m > 0:
     if stawka > m:
         print ("Niewystarczająca ilość pieniędzy.")
         exit ()
-    m = m - stawka
 
 # Losowanie liczby:
     i = randint (0, 36)
@@ -137,4 +136,5 @@ while m > 0:
         print ("Wygrana!")
     else:
         print ("Przegrana!")
+        m = m - stawka
     print ("Masz", m, "zł.")
