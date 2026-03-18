@@ -15,7 +15,7 @@ while (active):
       kolejka.append (input("Wprowadź imię klienta: "))
     case 2:
       if len(kolejka)>0:
-        print ("Obsłużono klienta:", kolejka.pop())
+        print ("Obsłużono klienta:", kolejka.pop(0))
       else:
         print ("Kolejka jest pusta.")
     case 3:
