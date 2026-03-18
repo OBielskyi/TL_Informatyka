@@ -7,8 +7,9 @@ m = 100
 u = None
 q = 0
 
+print ("Masz 100 zł.")
+
 while m > 0:
-    print ("Masz 100 zł.")
     print ("Wybierz rodzaj zakładu:")
     wybor = int (input ("1 -- numer pojedynczy,\n2 -- kolumna,\n3 -- tuziny,\n4 -- połowy,\n5 -- parzyste/nieparzyste,\n6 -- czarne/czerwone\n"))
     match wybor:
