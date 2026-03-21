@@ -72,17 +72,3 @@ print('\n liczba liczb parzystych wynosi:',liczba_liczb_parz(liczby_calk))
 print('-'*30)
 print('\n liczba liczb nieparzystych wynosi:',liczba_liczb_nieparz(liczby_calk))
 print('-'*30)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
