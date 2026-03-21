@@ -1,15 +1,16 @@
 # Program "Ruletka" (pełna wersja, z podpunktami 4 i 5)
-# Ten kod nie ma komentarzy, bo jestem leniwy. Potem to zrobię, ok?
+# Teraz z komentarzami!
 
-from random import randint
+from random import randint    # lub import random, ale dla funkcjonowania tego programu potrzebny jest tylko sam randint
 
-m = 100
-u = None
-q = 0
+m = 100    # m jak money, co nie? Na początku gry mamy 100 zł
+u = None    # Nwm po co akurat u, ale jest to wybór użytkownika (np. liczba, tuzin, kolumna) w menu poniżej
+q = 0    # W zależności od rodzaju zakładu, q się zmienia. Jeśli wygramy, to do m dodawana jest stawka * q.
 
-print ("Masz 100 zł.")
+print ("Masz 100 zł.")    # No shit Sherlock
 
-while m > 0:
+while m > 0:    # Cykl powtarza się dopóki nie stracimy wszystko
+    # MENU
     print ("Wybierz rodzaj zakładu:")
     wybor = int (input ("1 -- numer pojedynczy,\n2 -- kolumna,\n3 -- tuziny,\n4 -- połowy,\n5 -- parzyste/nieparzyste,\n6 -- czarne/czerwone\n"))
     match wybor:
@@ -49,10 +50,10 @@ while m > 0:
         case _:
             print ("Błąd.")
             exit ()
-    stawka = float (input("Wprowadź wysokość stawki [zł]: "))
+    stawka = float (input("Wprowadź wysokość stawki [zł]: "))    # Tak, możemy odjąć float od int. Python jest mądry.
     if stawka > m:
-        print ("Niewystarczająca ilość pieniędzy.")
-        exit ()
+        print ("Niewystarczająca ilość pieniędzy.")    # Oczywiście, że stawka nie może być większą od m
+        exit ()    # exit() zamyka/'zabija' program
 
 # Losowanie liczby:
     i = randint (0, 36)
@@ -91,26 +92,26 @@ while m > 0:
 
     kolumna = 0
     match i:
-        case i if i % 3 == 1:
+        case i if i % 3 == 1:    # reszta z dzielenia przez 3
             kolumna = 1
         case i if i % 3 == 2:
             kolumna = 2
         case i if i % 3 == 3:
             kolumna = 3
 
-    if kolumna != 0:
+    if kolumna != 0:    # kolumna zostaje 0 tylko dla liczby 0
         print ("Liczba należy do", kolumna, "kolumny.")
 
     czerwona = False
     if i == 1 or i == 3 or i == 5 or i == 7 or i == 9 or i == 12 or i == 14 or i == 16 or i == 18 or i == 19 or i == 21 or i == 23 or i == 25 or i == 27 or i == 30 or i == 32 or i == 34 or i == 36:
         czerwona = True
-    if czerwona and i != 0:
+    if czerwona and i != 0:    # 0 nie jest czerwone ani czarne
         print ("Czerwona.")
     elif i != 0:
         print ("Czarna.")
 
     win = False
-    match wybor:
+    match wybor:    # wybor to rodzaj stawki (wybierany przez użytkownika na początku pętli while
         case 1:
             if u == i:
                 win = True
@@ -132,9 +133,11 @@ while m > 0:
             elif u == 1 and czerwona == True:
                 win = True
     if win:
-        m = m + q * stawka
+        m = m + q * stawka    # Jeśli zapomniałeś co to było q, to czytaj komentarze na samym początku (+ masz Alzheimera)
         print ("Wygrana!")
     else:
         print ("Przegrana!")
-        m = m - stawka
+        m = m - stawka    # To jest chyba oczywiste
     print ("Masz", m, "zł.")
+
+# Kocham Tomka Bizonia (w gejowski sposób)
