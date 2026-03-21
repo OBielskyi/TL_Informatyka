@@ -1,6 +1,3 @@
-
-
-
 liczby_calk=[]
 
 
@@ -24,14 +21,16 @@ def Suma_liczb_calk(liczby_calk):
 def srd_arytm(liczby_calk):
     return Suma_liczb_calk(liczby_calk) /len(liczby_calk)       ### średnia arytmetyczna
 
-def mediana(liczby_calk):
-    liczby = sorted(liczby_calk)
-    n=len(liczby)						                                    ### mediana
-    srodek=n//2
-    if n % 2 == 0:
-        return(liczby[srodek - 1] + liczby[srodek]) / 2
-    else:
-        return liczby[srodek]
+# def mediana(liczby_calk):
+    # liczby = sorted(liczby_calk)
+    # n=len(liczby)						                                    ### mediana
+    # srodek=n//2
+    # if n % 2 == 0:
+        # return(liczby[srodek - 1] + liczby[srodek]) / 2
+    # else:
+        # return liczby[srodek]
+# Mediana nie działa tak jak trzeba
+
 def elem_max(liczby_calk):
     return max(liczby_calk)                             ### element maksymalny
     
@@ -61,8 +60,8 @@ print('\nSuma tych liczb wynosi:',Suma_liczb_calk(liczby_calk))
 print('-'*30)
 print('\nŚrednia arytmetyczna liczb wynosi:',srd_arytm(liczby_calk))
 print('-'*30)
-print('\nmediana tych liczb wynosi:',mediana(liczby_calk))
-print('-'*30)
+# print('\nmediana tych liczb wynosi:',mediana(liczby_calk))
+# print('-'*30)
 print('\n element maksymalny liczb to :',elem_max(liczby_calk))
 print('-'*30)
 print('\n element minimalny liczb to :',elem_min(liczby_calk))
