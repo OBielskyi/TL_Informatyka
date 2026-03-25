@@ -17,3 +17,4 @@ while True:
     else:
       stos.append (string[i])
   print (save)
+  save = []
