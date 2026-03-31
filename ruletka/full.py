@@ -128,9 +128,9 @@ while m > 0:    # Cykl powtarza się dopóki nie stracimy wszystko
             if i % 2 == u:
                 win = True
         case 6:
-            if u == 0 and czerwona == False:
+            if u == 0 and not czerwona:
                 win = True
-            elif u == 1 and czerwona == True:
+            elif u == 1 and czerwona:
                 win = True
     if win:
         m = m + q * stawka    # Jeśli zapomniałeś co to było q, to czytaj komentarze na samym początku (+ masz Alzheimera)

@@ -5,7 +5,7 @@ sel = int (input("1 -- suma, 2 -- średnia arytmetyczna,\n3 -- element maksymaln
 print ()
 match sel:
     case 1:
-        print (funkce.suma ())
+        print (funkcje.suma ())
     case 2:
         print (funkcje.srar ())
     case 3:
@@ -15,7 +15,7 @@ match sel:
     case 5:
         print (funkcje.rozn ())
     case 6:
-        print (funkce.parz ())
+        print (funkcje.parz ())
     case 7:
         print (funkcje.niep ())
 time.sleep (5)
