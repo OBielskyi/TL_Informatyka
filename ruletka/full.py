@@ -58,11 +58,11 @@ while m > 0:    # Cykl powtarza się dopóki nie stracimy wszystko
 # Losowanie liczby:
     i = randint (0, 36)
     print ("Wylosowana liczba to:", i)
-
-    if i % 2 == 0:
-        print ("Liczba jest parzysta.")
-    elif i != 0:
-        print ("Liczba nie jest parzysta.")
+    if i != 0:      # 0 nie może być ani parzyste, ani nieparzyste (Najman zabije mnie za to, wiem)
+        if i % 2 == 0:
+            print ("Liczba jest parzysta.")
+        else:
+            print ("Liczba nie jest parzysta.")
     
     tuzin = 0
     match i:
@@ -92,11 +92,13 @@ while m > 0:    # Cykl powtarza się dopóki nie stracimy wszystko
 
     kolumna = 0
     match i:
+        case 0:
+            pass    # wyrzucamy czarnucha na Kamińskiego
         case i if i % 3 == 1:    # reszta z dzielenia przez 3
             kolumna = 1
         case i if i % 3 == 2:
             kolumna = 2
-        case i if i % 3 == 3:
+        case i if i % 3 == 0:   # kurwa, czemu tylko teraz to naprawiłem
             kolumna = 3
 
     if kolumna != 0:    # kolumna zostaje 0 tylko dla liczby 0
@@ -105,9 +107,9 @@ while m > 0:    # Cykl powtarza się dopóki nie stracimy wszystko
     czerwona = False
     if i == 1 or i == 3 or i == 5 or i == 7 or i == 9 or i == 12 or i == 14 or i == 16 or i == 18 or i == 19 or i == 21 or i == 23 or i == 25 or i == 27 or i == 30 or i == 32 or i == 34 or i == 36:
         czerwona = True
-    if czerwona and i != 0:    # 0 nie jest czerwone ani czarne
+    if czerwona:    # Tu nie musimy sprawdzać zera, patrz na trzy linijki kodu ugóry
         print ("Czerwona.")
-    elif i != 0:
+    elif i != 0:    # A tu musimy!!!
         print ("Czarna.")
 
     win = False
@@ -133,11 +135,9 @@ while m > 0:    # Cykl powtarza się dopóki nie stracimy wszystko
             elif u == 1 and czerwona:
                 win = True
     if win:
-        m = m + q * stawka    # Jeśli zapomniałeś co to było q, to czytaj komentarze na samym początku (+ masz Alzheimera)
+        m = m + q * stawka    # Jeśli zapomniałeś co to było q, to czytaj komentarze na samym początku
         print ("Wygrana!")
     else:
         print ("Przegrana!")
         m = m - stawka    # To jest chyba oczywiste
     print ("Masz", m, "zł.")
-
-# Kocham Tomka Bizonia (w gejowski sposób)
