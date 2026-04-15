@@ -1,0 +1,27 @@
+def kalkulator():
+    try:
+        a = float(input("Podaj pierwszą liczbę: "))
+        op = input("Podaj operację (+, -, *, /): ")
+        b = float(input("Podaj drugą liczbę: "))
+
+        if op == "+":
+            wynik = a + b
+        elif op == "-":
+            wynik = a - b
+        elif op == "*":
+            wynik = a * b
+        elif op == "/":
+            if b == 0:
+                print("Błąd: dzielenie przez 0")
+                return
+            wynik = a / b
+        else:
+            print("Błąd: nieznana operacja")
+            return
+
+        print("Wynik:", wynik)
+
+    except ValueError:
+        print("Błąd: wprowadzono niepoprawne dane (to nie liczba)")
+
+kalkulator()
