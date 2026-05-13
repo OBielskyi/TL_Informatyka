@@ -13,8 +13,8 @@ while active:
   result = waliduj_tablice(input("Proszę wprowadzić ciąg znaków: "))
   if result:
     print("Tablica rejestracyjna jest poprawna.")
-  else result:
+  else:
     print("Tablica rejestracyjna jest niepoprawna!")
   sel = input("0 -- zakończ, dowolny inny znak -- kontynuuj")
-  if sel = 0:
+  if sel == 0:
     active = False
