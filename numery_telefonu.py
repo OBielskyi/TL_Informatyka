@@ -3,18 +3,24 @@
 
 import re
 
-def cleaning(tekst):
-  to_remove = re.findall("\D", tekst)
-  result = re.sub(to_remove, tekst)
-  if len(result) > 0:
-    return result
-  else:
-    return 1
+def clearing(tekst: str) -> list[str]:
+    wzorzec = r'(?<!\d)\+?(?:[\(\)]*\d[\(\)]*[\s\-]*){8,}[\(\)]*\d(?!\d)'
+    dopasowania = re.findall(wzorzec, tekst)
+    lista_numerow = []
+    
+    for dopasowanie in dopasowania:
+        cyfry = re.sub(r'\D', '', dopasowanie)
+        
+        if len(cyfry) >= 9:
+            numer_dobry = cyfry[-9:]
+            lista_numerow.append(numer_dobry)
+            
+    return lista_numerow
 
 while True:
-  to_print = cleaning(input("Wprowadź tekst: "))
-  if to_print != 1:
-    print(to_print)
-  res = input("0 -- zakończ, dowolny inny znak -- kontynuuj: ")
-  if res == "0":
-    quit()
+    result = clearing(input("Wprowadź tekst zawierający numer(y) telefonu: "))
+    for i in result:
+        print(i)
+    sel = input("0 -- zakończ, dowolny inny znak -- kontynuuj: ")
+    if sel == "0":
+      quit()
