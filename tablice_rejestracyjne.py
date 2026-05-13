@@ -14,5 +14,5 @@ while True:
   else:
     print("Tablica rejestracyjna jest niepoprawna!")
   sel = input("0 -- zakończ, dowolny inny znak -- kontynuuj: ")
-  if sel == 0:
+  if sel == "0":
     quit()
