@@ -7,7 +7,7 @@ def waliduj_tablice(tekst):
   match = re.search("[A-Z][A-Z][A-Z]?\s\w\w\w\w\w*", tekst)
   return match
   
-while active:
+while True:
   result = waliduj_tablice(input("Proszę wprowadzić ciąg znaków: "))
   if result:
     print("Tablica rejestracyjna jest poprawna.")
