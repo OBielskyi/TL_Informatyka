@@ -3,7 +3,6 @@
 
 import re
 
-active = True
 def waliduj_tablice(tekst):
   match = re.search("[A-Z][A-Z][A-Z]?\s\w\w\w\w\w*", tekst)
   return match
@@ -14,6 +13,6 @@ while active:
     print("Tablica rejestracyjna jest poprawna.")
   else:
     print("Tablica rejestracyjna jest niepoprawna!")
-  sel = input("0 -- zakończ, dowolny inny znak -- kontynuuj")
+  sel = input("0 -- zakończ, dowolny inny znak -- kontynuuj: ")
   if sel == 0:
-    active = False
+    quit()
